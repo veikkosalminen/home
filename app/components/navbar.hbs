@@ -1,7 +1,7 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <p class="navbar-item">
-            <strong>Koti</strong><span class="mx-2">-</span>Etusivu
+            <strong>Koti</strong><span class="mx-2">-</span>{{this.router.currentRoute.params.page}}
         </p>
         
         <div class="dropdown navbar-burger is-right {{if this.showMenu "is-active"}}" {{on "click" this.toggleMenu}}>
@@ -14,15 +14,15 @@
             </a>
             <div class="dropdown-menu" id="dropdown-menu" role="menu">
                 <div class="dropdown-content">
-                    <a href="#" class="dropdown-item is-active">
+                    <LinkTo @route="page" @model="Etusivu" class="dropdown-item {{if (eq this.router.currentRoute.params.page "Etusivu") "is-active"}}">
                         Etusivu
-                    </a>
-                    <a class="dropdown-item">
+                    </LinkTo>
+                    <LinkTo @route="page" @model="Lämmitys" class="dropdown-item {{if (eq this.router.currentRoute.params.page "Lämmitys") "is-active"}}">
                         Lämmitys
-                    </a>
-                    <a href="#" class="dropdown-item">
+                    </LinkTo>
+                    <LinkTo @route="page" @model="Vesipumppu" class="dropdown-item {{if (eq this.router.currentRoute.params.page "Vesipumppu") "is-active"}}">
                         Vesipumppu
-                    </a>
+                    </LinkTo>
                 </div>
             </div>
         </div>
