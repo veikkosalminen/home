@@ -14,15 +14,11 @@
             </a>
             <div class="dropdown-menu" id="dropdown-menu" role="menu">
                 <div class="dropdown-content">
-                    <LinkTo @route="page" @model="Etusivu" class="dropdown-item {{if (eq this.router.currentRoute.params.page "Etusivu") "is-active"}}">
-                        Etusivu
+                    {{#each this.menus as |menu|}}
+                    <LinkTo @route="page" @model={{menu}} class="dropdown-item {{if (eq this.router.currentRoute.params.page menu) "is-active"}}">
+                        {{menu}}
                     </LinkTo>
-                    <LinkTo @route="page" @model="Lämmitys" class="dropdown-item {{if (eq this.router.currentRoute.params.page "Lämmitys") "is-active"}}">
-                        Lämmitys
-                    </LinkTo>
-                    <LinkTo @route="page" @model="Vesipumppu" class="dropdown-item {{if (eq this.router.currentRoute.params.page "Vesipumppu") "is-active"}}">
-                        Vesipumppu
-                    </LinkTo>
+                    {{/each}}
                 </div>
             </div>
         </div>
