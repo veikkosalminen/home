@@ -8,7 +8,6 @@ export default class NavbarComponent extends Component {
 
     @action
     toggleMenu() {
-        console.log("toggle", this.showMenu)
         this.showMenu = !this.showMenu
     }
 }
