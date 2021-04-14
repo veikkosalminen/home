@@ -16,6 +16,12 @@ module.exports = function(/* environment, appConfig */) {
     icons: [{
       "src": "https://cdn.iconscout.com/icon/free/png-256/home-803-450320.png",
       "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://cdn.iconscout.com/icon/free/png-256/home-803-450320.png",
+      "sizes": "512x512",
       "type": "image/png"
     }
     ],
