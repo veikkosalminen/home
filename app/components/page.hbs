@@ -1,0 +1,10 @@
+
+{{#each boxes as |box|}}
+<div class="box">
+    <div class="content">
+        <p>{{box.name}}</p>
+
+        {{component box.component}}
+    </div>
+</div>
+{{/each}}
