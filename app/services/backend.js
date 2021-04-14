@@ -1,6 +1,9 @@
 import Service from '@ember/service';
+import { inject as service } from '@ember/service';
 
 export default class BackendService extends Service {
+
+    @service router
 
     url = "https://script.google.com/macros/s/AKfycbzmIfcn1upgDsZEWKuaoJHuqSdRj0wdT0c8km_o3ejsV3hK9ZM/exec"
 
@@ -37,6 +40,19 @@ export default class BackendService extends Service {
 
     async getMenus() {
         return Object.keys(await this.getPages())
+    }
+
+    async getPageElements() {
+        return await this.getPages()
+    }
+
+    async getCurrentPageElements() {
+        const pages = await this.getPages()
+        return pages[this.currentPage()]
+    }
+
+    currentPage() {
+        return this.router.currentRoute.params.page
     }
 
 }
